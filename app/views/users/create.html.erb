@@ -1,0 +1,61 @@
+<body class='application-back registrations new  '>
+
+	<div class='dashboard-body'>
+		<div class='container-fluid'>
+			<div class='login-header'>
+				<div class='grey pull-right hidden-xs'>
+					Already have an account? <a href="javascript:void()" onClick="alert('Under Implementation')">Sign in</a>.
+				</div>
+				<a class='logo' href='/'>
+					<h3>HUNTER SIGNUP</h3>
+				</a>
+			</div>
+
+			<div class='login-container signup-container'>
+				<h1>
+					Create a free account
+					<div class='subtitle hidden-xs'>
+						Hunter can be used for free, forever.
+					</div>
+					<div class='text-danger'>
+						<%= flash[:warning] %>
+					</div>
+				</h1>
+				<div class='board-box'>
+
+					<%= form_tag(users_path, method: "POST", class: '') do %>
+						<div class='form-container'>
+							<div class='row'>
+								<div class='col-md-6'>
+									<div class='form-group'>
+										<label for='first-name-field'>
+										First name
+										</label>
+										<%= text_field_tag :first_name, '', class: 'form-control input-lg', placeholder: 'First name', required: true %>
+									</div>
+								</div>
+
+								<div class='col-md-6'>
+									<div class='form-group'>
+										<label for='last-name-field'>
+										Last name
+										</label>
+										<%= text_field_tag :last_name, '', class: 'form-control input-lg', placeholder: 'Last name', required: true %>
+									</div>
+								</div>
+							</div>
+
+							<div class='form-group'>
+								<label for='password-field'>
+								Password
+								</label>
+								<%= password_field_tag :password, '', class: 'form-control input-lg', placeholder: 'Enter a secured password...', required: true %>
+							</div>
+							<%= button_tag 'Create account', class: 'btn btn-lg btn-orange' %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
